@@ -20,46 +20,58 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    #start-button:hover {
+      background-color: #0056b3;
+    }
     video {
       width: 80%;
       max-width: 720px;
       margin: 40px auto;
-      display: block;
-      pointer-events: none;
+      display: none;
     }
     #weiter {
       display: none;
-      margin-top: 30px;
-      padding: 10px 20px;
+      margin-top: 20px;
+      padding: 12px 24px;
       font-size: 16px;
-      background-color: #444;
+      background-color: #28a745;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
     }
     #weiter:hover {
-      background-color: #222;
+      background-color: #218828;
     }
   </style>
 </head>
 <body>
-  <h2>Kapitel 2 – Negativ</h2>
-  <video id="video" autoplay muted>
+  <h2>Kapitel 2 </h2>
+
+ <button id="start-button">▶️ Start</button>
+  
+  <video id="video2">
     <source src="https://tuc.cloud/index.php/s/xZEFnZyLyR5Eyw9/download" type="video/mp4" />
     Dein Browser unterstützt kein eingebettetes Video.
   </video>
 
   <button id="weiter" onclick="location.href='negativ_kapitel3.html'">Weiter</button>
 
-  <script>
-    const video = document.getElementById('video');
-    const weiter = document.getElementById('weiter');
-    if (weiter) {
-      video.onended = () => {
-        weiter.style.display = 'inline-block';
-      };
-    }
+  <  <script>
+    const startBtn = document.getElementById('start-button');
+    const video = document.getElementById('video2');
+    const weiterBtn = document.getElementById('weiter-button');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      weiterBtn.style.display = 'inline-block';
+    });
   </script>
+
 </body>
 </html>
