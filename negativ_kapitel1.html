@@ -37,22 +37,33 @@
 <body>
   <h2>Kapitel 1 </h2>
 
-  <button id="start-button">▶️ Start</button>
-  <video id="video" >
-    <source src="https://tuc.cloud/index.php/s/iN7NgJTNKGDnbke/download" type="video/mp4" />
-    Dein Browser unterstützt kein eingebettetes Video.
+   <button id="start-button">▶️ Start</button>
+
+  <video id="video1">
+    <source src="https://tuc.cloud/index.php/s/iN7NgJTNKGDnbke/download" type="video/mp4">
+    Dein Browser unterstützt dieses Video nicht.
   </video>
 
-  <button id="weiter" onclick="location.href='negativ_kapitel2.html'">Weiter</button>
+  <br>
+
+  <button id="weiter-button" onclick="location.href='kapitel2.html'">Weiter</button>
 
   <script>
-    const video = document.getElementById('video');
-    const weiter = document.getElementById('weiter');
-    if (weiter) {
-      video.onended = () => {
-        weiter.style.display = 'inline-block';
-      };
-    }
+    const startBtn = document.getElementById('start-button');
+    const video = document.getElementById('video1');
+    const weiterBtn = document.getElementById('weiter-button');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      weiterBtn.style.display = 'inline-block';
+    });
   </script>
+
 </body>
 </html>
+
