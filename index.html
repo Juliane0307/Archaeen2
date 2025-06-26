@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Kapitel 1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapitel 1 – Negativ</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
       background: #f0f0f0;
+      text-align: center;
       padding: 40px;
-    }
-    #start-button {
-      font-size: 18px;
-      padding: 14px 28px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    #start-button:hover {
-      background-color: #0056b3;
     }
     video {
       width: 80%;
       max-width: 720px;
+      margin: 30px auto;
       display: none;
-      margin: 40px auto;      /* Zentriert horizontal */
-      display: block;
     }
-    #weiter-button {
-      display: none;
+    button {
       margin-top: 20px;
-      padding: 12px 24px;
+      padding: 10px 20px;
       font-size: 16px;
-      background-color: #28a745;
+      background-color: #444;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
     }
-    #weiter-button:hover {
-      background-color: #218838;
+    button:hover {
+      background-color: #222;
+    }
+    #weiter {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <h2>Kapitel 1 – Negativ</h2>
 
-  <h2>Kapitel 1</h2>
-
-
-  <button id="start-button">▶️ Start</button>
+  <button id="start">Video starten</button>
 
   <video id="video">
-    <source src="https://tuc.cloud/index.php/s/iN7NgJTNKGDnbke/download" type="video/mp4">
-    Dein Browser unterstützt dieses Video nicht.
+    <source src="https://tuc.cloud/index.php/s/iN7NgJTNKGDnbke/download" type="video/mp4" />
+    Dein Browser unterstützt kein eingebettetes Video.
   </video>
 
-  <br>
-
-  <button id="weiter-button" onclick="location.href='kapitel2.html'">Weiter</button>
+  <br />
+  <button id="weiter" onclick="location.href='negativ_kapitel2.html'">Weiter</button>
 
   <script>
-    const startBtn = document.getElementById('start-button');
+    const startBtn = document.getElementById('start');
+    const video = document.getElementById('video');
+    const weiterBtn = document.getElementById('weiter');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      weiterBtn.style.display = 'inline-block';
+    });
+  </script>
+</body>
+</html>
+
     const video = document.getElementById('video');
     const weiterBtn = document.getElementById('weiter-button');
 
