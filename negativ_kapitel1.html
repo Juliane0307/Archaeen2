@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapitel 1 – Negativ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 40px;
+    }
+    video {
+      width: 80%;
+      max-width: 720px;
+      margin: 40px auto;
+      display: block;
+      pointer-events: none;
+    }
+    #weiter {
+      display: none;
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #weiter:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h2>Kapitel 1 – Negativ</h2>
+  <video id="video" autoplay muted>
+    <source src="https://tuc.cloud/index.php/s/iN7NgJTNKGDnbke/download" type="video/mp4" />
+    Dein Browser unterstützt kein eingebettetes Video.
+  </video>
+
+  <button id="weiter" onclick="location.href='negativ_kapitel2.html'">Weiter</button>
+
+  <script>
+    const video = document.getElementById('video');
+    const weiter = document.getElementById('weiter');
+    if (weiter) {
+      video.onended = () => {
+        weiter.style.display = 'inline-block';
+      };
+    }
+  </script>
+</body>
+</html>
